@@ -43,7 +43,7 @@ Temporary Items
 .apdisk
 
 # exclude Delphi
-mcce2.7/lib/delphi/
+**/dephi/
 
 # no object files except mcce.a library
 *~
