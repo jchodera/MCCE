@@ -101,6 +101,7 @@ f        Use control file "head1.lst" for rotamer making    (ROT_SPECIF)
 t        Do swap (stereo isotope)                           (ROT_SWAP)
 t        Do rotate?                                         (PACK)
 6        number of rotamers in a bond rotation              (ROTATIONS)
+f        delete original H atoms,(always deleted when doing heavy atom optimization) (DELETE_H)
 
 f        Do swing?                                          (SWING)
 10.0     phi in degrees of swing                            (PHI_SWING)
