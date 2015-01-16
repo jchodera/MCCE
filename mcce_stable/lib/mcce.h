@@ -91,6 +91,7 @@ typedef struct {
     int   repacks;
     int   nconf_limit;
 
+    char  delete_h;
     char  relax_wat;
     float water_relax_thr;
 

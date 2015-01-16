@@ -69,9 +69,9 @@ PROT load_pdb(FILE *fp)
 
             }
             else {
-               printf("%d %s\n", k_res, atom.history);
+               //printf("%d %s\n", k_res, atom.history);
                strcpy(prot.res[k_res].conf[0].history,"BK________");
-               printf("POINT 1\n");
+               //printf("POINT 1\n");
             }
             prot.res[k_res].conf[0].altLoc = ' ';
         }

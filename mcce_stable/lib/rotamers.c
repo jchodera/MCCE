@@ -152,9 +152,9 @@ int rotamers()
 
    printf("   Prepare for rotamer making ...\n");
    get_connect12(prot);
-   //if (env.delete_h) {
+   if (env.delete_h) {
        printf("   Deleting H atoms...%d H atoms were deleted.\n", delete_h(prot)); fflush(stdout);
-   //}
+   }
    printf("   Assigning radii.\n"); fflush(stdout); assign_rad(prot);
    printf("   Estimating Solvent Accessible Surface (SAS).\n"); fflush(stdout); surfw(prot, 1.4);
    write_headlst(prot);
@@ -252,6 +252,7 @@ int rotamers()
    get_vdw1(prot);
    printf("   Done\n\n"); fflush(stdout);
 
+
    /* Hydrogen bond directed rotamer making */
    //get_resnbrs(prot, 5.0);
    if (env.hdirected) {
@@ -294,6 +295,7 @@ int rotamers()
        printf("\n");
        fclose(fp);
    }
+
 
    /* clean up memory DEBUG
    free(confstat.nc_start);
@@ -349,6 +351,7 @@ int rotamers()
       }
    }
 
+
    /* Write heavy atom rotamer pdb file, for recursive use of step 2 */
    if (!env.minimize_size) {
       if (!(fp=fopen(FN_HVROT, "w"))) {
@@ -402,6 +405,13 @@ int rotamers()
    printf("\n");
    fclose(fp);
 
+   /* count conformers for debug 
+   c = 0;
+   for (i=0; i<prot.n_res; i++) {
+      c+=(prot.res[i].n_conf-1);
+   }
+   printf("CONF NUMBER = %d\n", c);
+   */
    /* heavy atom relaxation */
    if (env.hv_relax_ncycle > 0) {
        printf("   Relaxation...\n"); fflush(stdout);
@@ -414,6 +424,13 @@ int rotamers()
        printf("   Done\n\n"); fflush(stdout);
    }
 
+   /* count conformers for debug 
+   c = 0;
+   for (i=0; i<prot.n_res; i++) {
+      c+=(prot.res[i].n_conf-1);
+   }
+   printf("CONF NUMBER = %d\n", c);
+   */
 
    /* optimize hydroxyl and water */
    if (env.relax_h) {
@@ -445,6 +462,8 @@ int rotamers()
    printf("\n");
    fclose(fp);
 
+
+
    printf("   Sorting conformers...\n"); fflush(stdout);
    sort_conf(prot);
    printf("   Done\n\n"); fflush(stdout);
@@ -464,6 +483,7 @@ int rotamers()
    fflush(stdout);
    c = -1;
    while (c) {
+//     printf("%.2f %.2f %.2f", env.prune_rmsd, env.prune_ele, env.prune_vdw);
      c = prune_pv(prot, env.prune_rmsd, env.prune_ele, env.prune_vdw);
      if (c) printf("      %d conformers deleted in this cycle\n", c);
    }
@@ -3423,7 +3443,7 @@ int prune_pv(PROT prot, float c1, float c2, float c3)
          for (jc=2; jc<prot.res[ir].n_conf; jc++) {
             if (!prot.res[ir].conf[jc].on) continue;
             if (ic == jc) continue;
-            if (prot.res[ir].conf[jc].history[2] != 'R') continue;
+//            if (prot.res[ir].conf[jc].history[2] != 'R') continue;
             if (strcmp(prot.res[ir].conf[ic].confName, prot.res[ir].conf[jc].confName)) continue;
             if (over_geo(prot.res[ir].conf[ic], prot.res[ir].conf[jc], cutoff_geo)) continue;
             if (over_ele(prot, ir, ic, jc, cutoff_ele)) continue;

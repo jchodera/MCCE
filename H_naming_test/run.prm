@@ -18,9 +18,9 @@ prot.pdb                                                    (INPDB)
 
 Steps:
 t        step 1: pre-run, pdb-> mcce pdb                    (DO_PREMCCE)
-f        step 2: make rotatmers                             (DO_ROTAMERS)
-f        step 3: do energy calculations                     (DO_ENERGY)
-f        step 4: monte carlo sampling                       (DO_MONTE)
+t        step 2: make rotatmers                             (DO_ROTAMERS)
+t        step 3: do energy calculations                     (DO_ENERGY)
+t        step 4: monte carlo sampling                       (DO_MONTE)
 ==============================================================================
 
 
@@ -44,7 +44,7 @@ ph       "ph" for pH titration, "eh" for eh titration       (TITR_TYPE)
 #############################################################################
 MODIFYING FOLLOWING ENTRIES REQUIRE ADVANCED KNOWLEDGE:
 -----------------------------------------------------------------------------
-./                                          (MCCE_HOME)
+.                                          (MCCE_HOME)
 t       Minimize output files                               (MINIMIZE_SIZE)
 
 Options specific to each step:
@@ -57,18 +57,18 @@ f        Label terminal residues?                           (TERMINALS)
 step 2:
 f        Use specific control (head1.lst) on rotamer making (ROT_SPECIF)
 t        Do swap (stereo isotope)                           (ROT_SWAP)
-t        Do rotate?                                         (PACK)
+f        Do rotate?                                         (PACK)
 6        number of rotamers in a bond rotation              (ROTATIONS)
 0.25     SAS cuttoff of making fewer rotamers               (SAS_CUTOFF)
 10.0     Cutoff of self vdw in kcal/mol                     (VDW_CUTOFF)
 5000     number of repacks                                  (REPACKS)
 0.01     occupancy cutoff of repacks                        (REPACK_CUTOFF)
 
-t        h-bond directed rotamer making, requir 't' on Do rotate  (HDIRECTED)
+f        h-bond directed rotamer making, requir 't' on Do rotate  (HDIRECTED)
 1.0      threshold for two conformers being different       (HDIRDIFF)
 36       Limit number of the Hbond conformers               (HDIRLIMT)
 
-5        number of cycles to relax rotamer clash            (HV_RELAX_NCYCLE)
+0        number of cycles to relax rotamer clash            (HV_RELAX_NCYCLE)
 10       time (in fs) for each relaxation iteration         (HV_RELAX_DT)
 10       number of iterations                               (HV_RELAX_NITER)
 2.       relax rotamer if vdw interaction is bigger than this (HV_RELAX_VDW_THR)
@@ -78,7 +78,7 @@ t        h-bond directed rotamer making, requir 't' on Do rotate  (HDIRECTED)
 1.0      constraint distance                                (HV_RELAX_CONSTRAINT)
 20.      constraint force for atom stay in original position (HV_RELAX_CONSTRAINT_FRC)
 
-t        Do relaxation on hydrogens                         (RELAX_H)
+f        Do relaxation on hydrogens                         (RELAX_H)
 -5.0     Energy threshold for keeping the conformer         (RELAX_E_THR)
 50       Loop over N local microstates                      (RELAX_NSTATES)
 6        default number of hydroxyl positions               (RELAX_N_HYD)
@@ -94,7 +94,7 @@ step 3:
 1.4      Radius of the probe                                (RADIUS_PROBE)
 2.0      Ion radius                                         (IONRAD)
 0.15     Salt                                               (SALT)
-../mcce_stable/bin/delphi DelPhi executable             (DELPHI_EXE)
+/home/jmao/MCCE/mcce.git/mcce_stable/bin/delphi DelPhi executable             (DELPHI_EXE)
 
 step 4:
 5.0      Big pairwise threshold to make big list            (BIG_PAIRWISE)
@@ -121,4 +121,7 @@ new.tpl     local parameter file for unrecognized res       (NEWTPL)
 0.5      factor to 1-4 LJ potontial (1.0 is full)           (FACTOR_14LJ)
 1.0      dielectric constant for Coulomb's law              (EPSILON_COLUMB)
 ##############################################################################
-
+0.02     Last pruning threshold for conformers              (PRUNE_THR)
+1.5      Pruning cutoff of RMSD                             (PRUNE_RMSD)
+1.0      Pruning cutoff of eletrostatic pairwise            (PRUNE_ELE)
+8.0      Pruning cutoff of vdw pairwise                     (PRUNE_VDW)

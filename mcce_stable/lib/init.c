@@ -104,7 +104,7 @@ int get_env()
     env.hdirlimt          =   36;
 
     env.water_relax_thr   =  2.4;
-
+    env.delete_h            =  0;
     env.hv_relax_ncycle     =  0;
     env.hv_relax_niter      = 50;
     env.hv_relax_vdw_thr    =  5;
@@ -199,6 +199,13 @@ int get_env()
                 env.terminals = 1;
             }
             else env.terminals = 0;
+        }
+        else if (strstr(sbuff, "(DELETE_H)")) {
+            str1 = strtok(sbuff, " ");
+            if (str1[0] == 't' || str1[0] == 'T') {
+                env.delete_h = 1;
+            }
+            else env.delete_h = 0;
         }
         else if (strstr(sbuff, "(DO_ROTAMERS)")) {
             str1 = strtok(sbuff, " ");
