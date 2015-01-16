@@ -1,9 +1,6 @@
 Multi-Conformation Continuum Electrostatics (MCCE) simulation on protein residue charge states
 
-Notes by jmao:
- * The recent stable code is under mcce_stable folder.
- * Developers need to pull whole repository but users only need to download mcce_stable to run the program.
+This program is under developing by Marilyn Gunner's Biophysics group at City College at New York.
 
-
-
+The recent stable code is under mcce_stable folder. 
 
