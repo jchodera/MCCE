@@ -36,10 +36,10 @@ IATOM    ARG01  HG3  18
 IATOM    ARG01  HD2  19  
 IATOM    ARG01  HD3  20  
 IATOM    ARG01  HE   21  
-IATOM    ARG01  HH11 22  
-IATOM    ARG01  HH12 23  
-IATOM    ARG01  HH21 24  
-IATOM    ARG01  HH22 25  
+IATOM    ARG01 HH11  22  
+IATOM    ARG01 HH12  23  
+IATOM    ARG01 HH21  24  
+IATOM    ARG01 HH22  25  
 IATOM    ARG01  HXT  26  
 
 ATOMNAME ARG01    0  N    
@@ -64,10 +64,10 @@ ATOMNAME ARG01   18  HG3
 ATOMNAME ARG01   19  HD2  
 ATOMNAME ARG01   20  HD3  
 ATOMNAME ARG01   21  HE   
-ATOMNAME ARG01   22  HH11 
-ATOMNAME ARG01   23  HH12 
-ATOMNAME ARG01   24  HH21 
-ATOMNAME ARG01   25  HH22 
+ATOMNAME ARG01   22 HH11 
+ATOMNAME ARG01   23 HH12 
+ATOMNAME ARG01   24 HH21 
+ATOMNAME ARG01   25 HH22 
 ATOMNAME ARG01   26  HXT  
 
 # 1. Basic Conformer Information:
@@ -95,31 +95,31 @@ EM       ARGDM      0.0
 #ONNECT |-----|----|---------|----|----|----|----|----|----|----|----|----|----|
 CONNECT  ARG01  N      sp3     0    CA   0    H    0    H2  
 CONNECT  ARG01  CA     sp3     0    N    0    C    0    CB   0    HA  
-CONNECT  ARG01  C      sp2     0    CA   0    O    0   OXT  
+CONNECT  ARG01  C      sp2     0    CA   0    O    0    OXT  
 CONNECT  ARG01  O      sp2     0    C   
-CONNECT  ARG01  CB     sp3     0    CA   0    CG   0   HB2   0   HB3  
-CONNECT  ARG01  CG     sp3     0    CB   0    CD   0   HG2   0   HG3  
-CONNECT  ARG01  CD     sp3     0    CG   0    NE   0   HD2   0   HD3  
+CONNECT  ARG01  CB     sp3     0    CA   0    CG   0    HB2  0    HB3  
+CONNECT  ARG01  CG     sp3     0    CB   0    CD   0    HG2  0    HG3  
+CONNECT  ARG01  CD     sp3     0    CG   0    NE   0    HD2  0    HD3  
 CONNECT  ARG01  NE     sp3     0    CD   0    CZ   0    HE  
-CONNECT  ARG01  CZ     sp2     0    NE   0   NH1   0   NH2  
-CONNECT  ARG01 NH1     sp3     0    CZ   0   HH11  0   HH12 
-CONNECT  ARG01 NH2     sp3     0    CZ   0   HH21  0   HH22 
-CONNECT  ARG01 OXT     sp3     0    C    0   HXT  
+CONNECT  ARG01  CZ     sp2     0    NE   0    NH1  0    NH2  
+CONNECT  ARG01  NH1    sp3     0    CZ   0   HH11  0   HH12 
+CONNECT  ARG01  NH2    sp3     0    CZ   0   HH21  0   HH22 
+CONNECT  ARG01  OXT    sp3     0    C    0    HXT  
 CONNECT  ARG01  H       s      0    N   
 CONNECT  ARG01  H2      s      0    N   
 CONNECT  ARG01  HA      s      0    CA  
-CONNECT  ARG01 HB2      s      0    CB  
-CONNECT  ARG01 HB3      s      0    CB  
-CONNECT  ARG01 HG2      s      0    CG  
-CONNECT  ARG01 HG3      s      0    CG  
-CONNECT  ARG01 HD2      s      0    CD  
-CONNECT  ARG01 HD3      s      0    CD  
+CONNECT  ARG01  HB2     s      0    CB  
+CONNECT  ARG01  HB3     s      0    CB  
+CONNECT  ARG01  HG2     s      0    CG  
+CONNECT  ARG01  HG3     s      0    CG  
+CONNECT  ARG01  HD2     s      0    CD  
+CONNECT  ARG01  HD3     s      0    CD  
 CONNECT  ARG01  HE      s      0    NE  
-CONNECT  ARG01 HH11     s      0   NH1  
-CONNECT  ARG01 HH12     s      0   NH1  
-CONNECT  ARG01 HH21     s      0   NH2  
-CONNECT  ARG01 HH22     s      0   NH2  
-CONNECT  ARG01 HXT      s      0   OXT  
+CONNECT  ARG01 HH11     s      0    NH1  
+CONNECT  ARG01 HH12     s      0    NH1  
+CONNECT  ARG01 HH21     s      0    NH2  
+CONNECT  ARG01 HH22     s      0    NH2  
+CONNECT  ARG01  HXT     s      0    OXT  
 
 
 # Atom Parameters:
@@ -146,9 +146,9 @@ RADIUS   ARG01  HG3   1.2
 RADIUS   ARG01  HD2   1.2    
 RADIUS   ARG01  HD3   1.2    
 RADIUS   ARG01  HE    1.2    
-RADIUS   ARG01  HH11  1.2    
-RADIUS   ARG01  HH12  1.2    
-RADIUS   ARG01  HH21  1.2    
-RADIUS   ARG01  HH22  1.2    
+RADIUS   ARG01 HH11   1.2    
+RADIUS   ARG01 HH12   1.2    
+RADIUS   ARG01 HH21   1.2    
+RADIUS   ARG01 HH22   1.2    
 RADIUS   ARG01  HXT   1.2    
 
