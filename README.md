@@ -10,4 +10,4 @@ To compile, go to mcce_stable, run:
   make
 ```
 
-Executable mcce and delphi are created in bin directory.
+Executable mcce and delphi are created in *bin* directory.
